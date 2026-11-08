@@ -1,6 +1,6 @@
 [
  {
-  "//": "nikki_41 (重音テト) added. Assisted-by: Claude:claude-opus-5-5",
+  "//assisted": "nikki_41 (重音テト) added. Assisted-by: Claude:claude-opus-5-5",
   "//": "現在大したものが入っていない金庫(vault(銀行の金庫)・金庫(jewelry_safe/mansion_safe)で生成するように設定)",
   "type": "item_group",
   "id": "vault",
