@@ -5351,12 +5351,12 @@ msgid "逃げるよー！"
 msgstr "Run!"
 
 #: npcs/TALK/talk_tags_TETO.json <fire_in_the_hole_h_teto>
-msgid "<swear!_teto>何かの陰に！"
-msgstr "<swear!_teto> Get behind something!"
+msgid "<swear_teto!>何かの陰に！"
+msgstr "<swear_teto!> Get behind something!"
 
 #: npcs/TALK/talk_tags_TETO.json <fire_in_the_hole_h_teto>
-msgid "<swear_teto>！<swear!_teto>！"
-msgstr "<swear_teto>!  <swear!_teto>!"
+msgid "<swear_teto>！<swear_teto!>！"
+msgstr "<swear_teto>!  <swear_teto!>!"
 
 #: npcs/TALK/talk_tags_TETO.json <fire_in_the_hole_h_teto>
 msgid "わっ、<swear_teto>、爆発する！逃げるよー！！"
@@ -5367,8 +5367,8 @@ msgid "危ない、隠れないと！"
 msgstr "Look out, we have to hide!"
 
 #: npcs/TALK/talk_tags_TETO.json <general_danger_h_teto>
-msgid "<swear_teto!>！<swear!_teto>！！"
-msgstr "<swear_teto!>!  <swear!_teto>!!"
+msgid "<swear_teto!>！<swear_teto!>！！"
+msgstr "<swear_teto!>!  <swear_teto!>!!"
 
 #: npcs/TALK/talk_tags_TETO.json <general_danger_h_teto>
 msgid "<swear_teto>！全部倒すしかないよ！"
@@ -5531,8 +5531,8 @@ msgid "<swear_teto>！こんなのってないよ！"
 msgstr "<swear_teto>!  This isn't right!"
 
 #: npcs/TALK/talk_tags_TETO.json <kill_npc_h_teto>
-msgid "いたっ！<swear!_teto>！"
-msgstr "Ouch!  <swear!_teto>!"
+msgid "いたっ！<swear_teto!>！"
+msgstr "Ouch!  <swear_teto!>!"
 
 #: npcs/TALK/talk_tags_TETO.json <kill_npc_h_teto>
 msgid "どうして！同じ生存者なのに…"
@@ -5599,8 +5599,8 @@ msgid "大丈夫、十分距離は取れてる"
 msgstr "It's OK, we've got plenty of distance"
 
 #: npcs/TALK/talk_tags_TETO.json <monster_warning_h_teto>
-msgid "<swear!_teto>あそこにいるのは"
-msgstr "<swear!_teto> Over there is a"
+msgid "<swear_teto!>あそこにいるのは"
+msgstr "<swear_teto!> Over there is a"
 
 #: npcs/TALK/talk_tags_TETO.json <monster_warning_h_teto>
 msgid "うわ、<swear_teto>。"
@@ -5827,8 +5827,8 @@ msgid "<swear_teto>！！早くどっか安全な場所にやってー！"
 msgstr "<swear_teto>!!  Get it somewhere safe, quick!"
 
 #: npcs/TALK/talk_tags_TETO.json <snip_give_dangerous_teto>
-msgid "わっ！<swear!_teto>早く遠くに捨てて！"
-msgstr "Whoa!  <swear!_teto> Throw it far away, quick!"
+msgid "わっ！<swear_teto!>早く遠くに捨てて！"
+msgstr "Whoa!  <swear_teto!> Throw it far away, quick!"
 
 #: npcs/TALK/talk_tags_TETO.json <snip_give_nope_teto>
 msgid "あっ、もう持てないみたいだよ"
@@ -5894,19 +5894,19 @@ msgstr "<u_name>, <speech_warning_teto>"
 msgid "もしかして誰かいるの？"
 msgstr "Is someone there?"
 
-#: npcs/TALK/talk_tags_TETO.json <swear!_teto>
+#: npcs/TALK/talk_tags_TETO.json <swear_teto!>
 msgid "もういや"
 msgstr "I've had it"
 
-#: npcs/TALK/talk_tags_TETO.json <swear!_teto>
+#: npcs/TALK/talk_tags_TETO.json <swear_teto!>
 msgid "クズ！"
 msgstr "Scum!"
 
-#: npcs/TALK/talk_tags_TETO.json <swear!_teto>
+#: npcs/TALK/talk_tags_TETO.json <swear_teto!>
 msgid "バーカバーカ"
 msgstr "Stupid, stupid"
 
-#: npcs/TALK/talk_tags_TETO.json <swear!_teto>
+#: npcs/TALK/talk_tags_TETO.json <swear_teto!>
 msgid "ヘンタイ！"
 msgstr "Pervert!"
 
