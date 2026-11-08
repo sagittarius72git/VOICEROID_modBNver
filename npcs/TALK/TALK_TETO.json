@@ -1,0 +1,20 @@
+[
+  {
+    "//": "重音テトの会話 / Kasane Teto dialogue. Assisted-by: Claude:claude-opus-5-5",
+    "id":"TALK_TETO_SAN_1",
+    "type":"talk_topic",
+    "dynamic_line":"誰だい、君は?",
+    "responses":[
+      { "text": "仲間になってください", "topic": "TALK_TETO_SAN_2" },
+      { "text": "うーん…", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id":"TALK_TETO_SAN_2",
+    "type":"talk_topic",
+    "dynamic_line":"こんな状況だし、誰かといたほうが良いかも…君についていくよ。よろしくね。",
+    "responses":[
+      { "text": "…","effect": [ "follow", { "npc_first_topic": "TALK_FRIEND" } ], "topic": "TALK_DONE" }
+    ]
+  }
+]

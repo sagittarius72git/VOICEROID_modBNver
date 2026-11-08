@@ -1,0 +1,17 @@
+[
+  {
+    "//": "重音テトの初期装備 / Kasane Teto NPC clothes. Assisted-by: Claude:claude-opus-5-5",
+    "type": "item_group",
+    "id": "NC_TETO_worn",
+    "subtype": "collection",
+    "entries": [
+      { "item": "panties" },
+      { "item": "bra" },
+      { "item": "socks" },
+      { "item": "voiro_boots_teto" },
+      { "item": "voiro_headset_teto" },
+      { "item": "voiro_dress_teto" },
+      { "item": "mbag" }
+    ]
+  }
+]

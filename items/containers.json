@@ -1,0 +1,21 @@
+[
+ {
+  "id": "waterproof_smart_phone_case_voiro",
+  "type": "CONTAINER",
+  "category": "container",
+  "name": {
+   "str": "防水スマートフォンケース『結月ゆかり』"
+  },
+  "description": "ポイポン8専用に作られた、結月ゆかりコラボデザインの防水スマートフォンケースです。高級感のある紫色を基調として、ケースの中心に記号的な兎のイラストが描かれており、よく見ると縁の部分がチェーンソーをデフォルメしたようなデザインになっています。",
+  "weight": "80 g",
+  "volume": "150 ml",
+  "price": "10 USD",
+  "material": "plastic",
+  "symbol": ")",
+  "color": "magenta",
+  "to_hit": -1,
+  "contains": "100 ml",
+  "watertight": true,
+  "seals": true
+ }
+]
