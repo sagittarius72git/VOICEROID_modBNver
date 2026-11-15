@@ -18,6 +18,7 @@ This mod was ported to BN with the assistance of Claude Opus.
 ## What this mod adds
 
 Items and skins for the characters of VOICEROID, Otomachi Una Talk Ex, CeVIO, Gynoid Talk, Galaco Talk, VOICEVOX and Kasane Teto.
+The NPCs Tsurumaki Maki, Yuzuki Yukari, Tohoku Zunko and Kasane Teto say their own lines when they yawn, are hungry or thirsty, or ask you to let them pass (uses Lua).
 Some gimmicks were removed in the move to BN (such as the Zunda Arrow). Thank you for understanding.
 
 Game text is in Japanese. With the game language set to English, the mod's text is shown in English (lang/en.mo).

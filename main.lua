@@ -2,7 +2,9 @@
   VOICEROID mod - main.lua
 
   ボイスロイドのNPCに、キャラクター専用のセリフ（talk tags）を喋らせる。
+  対象のセリフ：あくび・空腹・喉の渇き・「どいて」。
   Makes VOICEROID NPCs speak their own lines (talk tags).
+  Covered lines: yawn, hungry, thirsty and "let me pass".
 
   本体は <yawn> や <let_me_pass> のような決まったタグしか呼ばない。
   そこで同じ場面を Lua で捉えて、<yawn_teto> などに差し替える。
@@ -21,12 +23,25 @@ local mod = game.mod_runtime[game.current_mod]
 
 -- 誰がどのセリフを使うか（特性ID → タグの末尾）。
 -- キャラクターを増やす時は、ここに1行足す。
--- Who uses which lines (trait ID -> tag suffix).
+-- 変身後の特性（_active）があるキャラクターは、両方を書く。
+-- Who uses which lines (trait IDs -> tag suffix).
 -- To add a character, add one line here.
+-- Characters with a transformed trait (_active) list both.
 --   "_teto" → <yawn_teto> <hungry_teto> <thirsty_teto> <let_me_pass_teto>
 local VOICES = {
-  { trait = MutationBranchId.new("VOIRO_BODY_TETO"), suffix = "_teto" },
+  { suffix = "_maki", traits = { "VOIRO_BODY_MAKI" } },
+  { suffix = "_yukari", traits = { "VOIRO_BODY_YUKARI", "VOIRO_BODY_YUKARI_active" } },
+  { suffix = "_zunko", traits = { "VOIRO_BODY_ZUNKO", "VOIRO_BODY_ZUNKO_active" } },
+  { suffix = "_teto", traits = { "VOIRO_BODY_TETO" } },
 }
+
+-- 文字列のIDを、ゲームのIDに一度だけ変換しておく。
+-- Turn the ID strings into game IDs once.
+for _, voice in ipairs(VOICES) do
+  for i, id in ipairs(voice.traits) do
+    voice.traits[i] = MutationBranchId.new(id)
+  end
+end
 
 -- true : 本体の「どいて」を止めて、専用のセリフだけにする。
 -- false: 本体のセリフはそのままで、専用のセリフを追加で喋る。
@@ -75,7 +90,9 @@ local HINDER_EFFECTS = {
 ---@return string?
 local function suffix_of(npc)
   for _, voice in ipairs(VOICES) do
-    if npc:has_trait(voice.trait) then return voice.suffix end
+    for _, trait in ipairs(voice.traits) do
+      if npc:has_trait(trait) then return voice.suffix end
+    end
   end
   return nil
 end
