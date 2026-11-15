@@ -6,7 +6,6 @@
     "dynamic_line":"誰だい、君は?",
     "responses":[
       { "text": "仲間になってください", "topic": "TALK_TETO_SAN_2" },
-      { "text": "少し話をしませんか？", "topic": "TALK_TETO_SAN_CHAT" },
       { "text": "うーん…", "topic": "TALK_DONE" }
     ]
   },
