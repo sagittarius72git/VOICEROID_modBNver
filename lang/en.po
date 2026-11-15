@@ -4018,6 +4018,34 @@ msgstr "Who are you?"
 msgid "こんな状況だし、誰かといたほうが良いかも…君についていくよ。よろしくね。"
 msgstr "With things like this, it might be better to stick with someone... I'll follow you.  Nice to meet you."
 
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_1
+msgid "少し話をしませんか？"
+msgstr "Could we talk for a bit?"
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT
+msgid "なあに、<u_name>？"
+msgstr "What is it, <u_name>?"
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT
+msgid "この辺りは安全そうですね"
+msgstr "It looks safe around here."
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT
+msgid "これからも頼りにしています"
+msgstr "I'll keep counting on you."
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT
+msgid "また今度"
+msgstr "Maybe another time."
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT_SAFE
+msgid "<its_safe_teto> でも、油断は禁物だよ。"
+msgstr "<its_safe_teto>  But we shouldn't let our guard down."
+
+#: npcs/TALK/TALK_TETO.json TALK_TETO_SAN_CHAT_SAFE
+msgid "ほかにも話したいことがあります"
+msgstr "There's something else I'd like to talk about."
+
 #: npcs/TALK/TALK_TUINA.json TALK_TUINA_SAN_1
 msgid "ウチは大人のれでーやで！"
 msgstr "I'm a grown-up lady, y'know!"

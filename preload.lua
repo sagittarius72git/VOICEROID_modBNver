@@ -21,3 +21,11 @@ end)
 game.add_hook("on_npc_try_move", function(...)
   if mod.on_npc_try_move then return mod.on_npc_try_move(...) end
 end)
+
+-- ゲームの開始時とロード時：<u_name>（プレイヤーの名前）の準備
+-- When a game starts or loads: prepare <u_name> (the player's name).
+for _, hook in ipairs({ "on_game_started", "on_game_load" }) do
+  game.add_hook(hook, function(...)
+    if mod.on_game_ready then mod.on_game_ready(...) end
+  end)
+end

@@ -6,6 +6,7 @@
     "dynamic_line":"誰だい、君は?",
     "responses":[
       { "text": "仲間になってください", "topic": "TALK_TETO_SAN_2" },
+      { "text": "少し話をしませんか？", "topic": "TALK_TETO_SAN_CHAT" },
       { "text": "うーん…", "topic": "TALK_DONE" }
     ]
   },
@@ -15,6 +16,67 @@
     "dynamic_line":"こんな状況だし、誰かといたほうが良いかも…君についていくよ。よろしくね。",
     "responses":[
       { "text": "…","effect": [ "follow", { "npc_first_topic": "TALK_FRIEND" } ], "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "//": "仲間の会話（本体の TALK_FRIEND）に、テトの時だけ出る選択肢を1つ足す。同じidで書くと選択肢が追加される。 / Adds one response to the game's ally topic, shown only for Teto. Reusing the id appends responses. Assisted-by: Claude:claude-fable-5-2",
+    "id":"TALK_FRIEND",
+    "type":"talk_topic",
+    "responses":[
+      { "text": "少し話をしませんか？", "topic": "TALK_TETO_SAN_CHAT", "condition": { "npc_has_trait": "VOIRO_BODY_TETO" } }
+    ]
+  },
+  {
+    "//": "talk tags の使い方の見本。使い方1: セリフ全体をタグにする。使い方2: 条件（疲れ・喉の渇き・空腹）でタグを選ぶ。 / Sample use of talk tags. 1: a whole line as a tag. 2: pick a tag by condition (tired, thirsty, hungry). Assisted-by: Claude:claude-fable-5-2",
+    "id":"TALK_TETO_SAN_CHAT",
+    "type":"talk_topic",
+    "dynamic_line":{
+      "npc_need": "fatigue", "level": "TIRED",
+      "yes": "<yawn_teto>",
+      "no": {
+        "npc_need": "thirst", "amount": 80,
+        "yes": "<thirsty_teto>",
+        "no": {
+          "npc_need": "hunger", "amount": 160,
+          "yes": "<hungry_teto>",
+          "no": "なあに、<u_name>？"
+        }
+      }
+    },
+    "responses":[
+      { "text": "この辺りは安全そうですね", "topic": "TALK_TETO_SAN_CHAT_SAFE" },
+      { "text": "これからも頼りにしています", "topic": "TALK_TETO_SAN_CHAT_RELY" },
+      { "text": "また今度", "topic": "TALK_TETO_SAN_CHAT_BYE" }
+    ]
+  },
+  {
+    "//": "使い方3: 文章の中にタグを混ぜる。使い方4: 配列にすると、どれか1つがランダムで選ばれる。 / 3: a tag inside a sentence. 4: an array picks one line at random. Assisted-by: Claude:claude-fable-5-2",
+    "id":"TALK_TETO_SAN_CHAT_SAFE",
+    "type":"talk_topic",
+    "dynamic_line":[
+      "<its_safe_teto>",
+      "<its_safe_teto> でも、油断は禁物だよ。"
+    ],
+    "responses":[
+      { "text": "ほかにも話したいことがあります", "topic": "TALK_NONE" },
+      { "text": "…", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id":"TALK_TETO_SAN_CHAT_RELY",
+    "type":"talk_topic",
+    "dynamic_line":"<acknowledged_teto>",
+    "responses":[
+      { "text": "ほかにも話したいことがあります", "topic": "TALK_NONE" },
+      { "text": "…", "topic": "TALK_DONE" }
+    ]
+  },
+  {
+    "id":"TALK_TETO_SAN_CHAT_BYE",
+    "type":"talk_topic",
+    "dynamic_line":"<snip_bye_teto>",
+    "responses":[
+      { "text": "…", "topic": "TALK_DONE" }
     ]
   }
 ]

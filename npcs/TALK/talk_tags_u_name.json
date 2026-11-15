@@ -1,0 +1,8 @@
+[
+  {
+    "type": "snippet",
+    "category": "<u_name>",
+    "//": "プレイヤーの名前。BN本体は <u_name> を知らないので、main.lua が名前を入れておく値（npctalk_var_voiro_u_name）を読むタグに置き換える。 / The player's name. BN does not know <u_name>, so it is swapped for a tag that reads a value main.lua fills with the name. Assisted-by: Claude:claude-fable-5-2",
+    "text": [ "<utalk_var_voiro_u_name>" ]
+  }
+]

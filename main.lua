@@ -3,8 +3,10 @@
 
   ボイスロイドのNPCに、キャラクター専用のセリフ（talk tags）を喋らせる。
   対象のセリフ：あくび・空腹・喉の渇き・「どいて」。
+  セリフの中の <u_name>（プレイヤーの名前）も、ここで使えるようにする。
   Makes VOICEROID NPCs speak their own lines (talk tags).
   Covered lines: yawn, hungry, thirsty and "let me pass".
+  Also makes <u_name> (the player's name) work inside the lines.
 
   本体は <yawn> や <let_me_pass> のような決まったタグしか呼ばない。
   そこで同じ場面を Lua で捉えて、<yawn_teto> などに差し替える。
@@ -127,6 +129,26 @@ local function guarded(fn, params)
 end
 
 -- ============================================================
+-- プレイヤーの名前 / The player's name (<u_name>)
+-- ============================================================
+
+-- BN本体は <u_name> を知らず、そのままだと「Bad tag」のエラーになる。
+-- npcs/TALK/talk_tags_u_name.json が <u_name> を <utalk_var_voiro_u_name> に置き換え、
+-- 本体はプレイヤーが持つ U_NAME_KEY の値を読む。ここでその値に名前を入れておく。
+-- BN does not know <u_name>; left alone it raises a "Bad tag" error.
+-- npcs/TALK/talk_tags_u_name.json swaps <u_name> for <utalk_var_voiro_u_name>,
+-- and the game then reads the U_NAME_KEY value from the player. This keeps it filled in.
+local U_NAME_KEY = "npctalk_var_voiro_u_name"
+local U_NAME_FALLBACK = "君" -- 名前が空の時 / when the name is empty
+
+local function sync_player_name()
+  local you = gapi.get_avatar()
+  local name = you.name
+  if name == nil or name == "" then name = U_NAME_FALLBACK end
+  if you:get_value(U_NAME_KEY) ~= name then you:set_value(U_NAME_KEY, name) end
+end
+
+-- ============================================================
 -- あくび・空腹・喉の渇き / Yawn, hungry, thirsty
 -- ============================================================
 
@@ -141,6 +163,10 @@ local function complain(params)
   local npc = params.npc
   local suffix = suffix_of(npc)
   if not suffix then return end
+
+  -- 名前が変わっていても追いつくように、対象のNPCがいる間は毎ターン確かめる。
+  -- Checked every turn while such an NPC is around, so a changed name is picked up.
+  sync_player_name()
 
   -- 仲間で、プレイヤーから見えていて、起きている時だけ
   -- Only for allies the player can see, and only while awake.
@@ -194,6 +220,7 @@ local function let_me_pass(params)
   if npc:attitude_to(you) == Attitude.Hostile then return nil end
   if has_any_effect(npc, HINDER_EFFECTS) then return nil end
 
+  sync_player_name()
   npc:say("<let_me_pass" .. suffix .. ">")
   if not REPLACE_LET_ME_PASS then return nil end
 
@@ -208,3 +235,7 @@ end
 mod.on_npc_do_turn = function(params) guarded(complain, params) end
 
 mod.on_npc_try_move = function(params) return guarded(let_me_pass, params) end
+
+-- ゲームの開始時とロード時に名前を入れておく（会話の文章でも <u_name> を使えるように）。
+-- Fill in the name when a game starts or loads, so dialogue text can use <u_name> too.
+mod.on_game_ready = function(params) guarded(sync_player_name, params) end
