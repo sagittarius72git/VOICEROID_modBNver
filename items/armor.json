@@ -3459,7 +3459,30 @@
   "copy-from": "voiro_dress_akane",
   "name": "ワンピース(重音テト)[voiro]",
   "description": "赤いラインの入った灰色のワンピースです。",
-  "color": "light_gray"
+  "color": "light_gray",
+  "//": "袖があるので両腕も覆う / Has sleeves, so it also covers both arms. Assisted-by: Claude:claude-opus-5-5",
+  "armor_portion_data": [
+   {
+    "coverage": 90,
+    "covers": [
+     "torso"
+    ]
+   },
+   {
+    "coverage": 100,
+    "covers": [
+     "arm_l",
+     "arm_r"
+    ]
+   },
+   {
+    "covers": [
+     "leg_l",
+     "leg_r"
+    ],
+    "coverage": 80
+   }
+  ]
  },
  {
   "id": "voiro_boots_teto",
