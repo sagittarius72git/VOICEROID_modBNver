@@ -3469,7 +3469,7 @@
     ]
    },
    {
-    "coverage": 100,
+    "coverage": 80,
     "covers": [
      "arm_l",
      "arm_r"
